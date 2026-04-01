@@ -5,7 +5,8 @@ const string = "Hello ";
 
 fs.appendFile("./temp.txt", string, "utf8", () => {});
 
-const command = 'git add . && git commit -m "Some Commit Message"';
+const command =
+  'git add . && git commit -m "Some Commit Message" && git push origin main';
 
 exec(command, (error, stdout, stderr) => {
   if (error) {
