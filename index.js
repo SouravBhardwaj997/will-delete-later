@@ -3,7 +3,7 @@ import { exec } from "child_process";
 
 const string = "Hello ";
 
-for (let i = 0; i < 10; i++) {
+Array.from({ length: 10 }).map((el) => {
   fs.appendFile("./temp.txt", string, "utf8", () => {});
 
   const command =
@@ -17,5 +17,5 @@ for (let i = 0; i < 10; i++) {
     console.log(`stdout: ${stdout}`);
     console.error(`stderr: ${stderr}`);
   });
-  console.log("Commit DONE", i);
-}
+  console.log("Commit DONE", el);
+});
