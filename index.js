@@ -1,11 +1,11 @@
 import fs from "fs";
 import { exec } from "child_process";
 
-const string = "Hello";
+const string = "Hello ";
 
-fs.writeFile("./temp.txt", string, "utf8", () => {});
+fs.appendFile("./temp.txt", string, "utf8", () => {});
 
-const command = "git status";
+const command = 'git add . && git commit -m "Some Commit Message"';
 
 exec(command, (error, stdout, stderr) => {
   if (error) {
